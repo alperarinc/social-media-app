@@ -1,0 +1,7 @@
+spring:
+  datasource:
+    url: jbh2:h2:./devdb
+    username: sa
+  jpa:
+    hibernate:
+      ddl-auto: update

@@ -26,7 +26,7 @@ class UserSingupPage extends React.Component{
             displayName,
             password
         };
-        axios.post('http://localhost:8080/api/1.0/users', body)
+        axios.post('/api/1.0/users', body)
 
     }
 
