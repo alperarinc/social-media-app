@@ -10,9 +10,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class UserController {
 
-
-
-    @Autowired /*veri tabanına erişebilmemiz için kullanılan objelerden birisi*/
+    @Autowired
     UserRepository userRepository;
 
 
