@@ -1,27 +1,27 @@
 import React from "react";
 import axios from "axios";
 
-class UserSingupPage extends React.Component{
+class UserSingupPage extends React.Component {
     state = {
-        username:null,
-        displayName:null,
-        password:null,
-        passwordRepeat:null
+        username: null,
+        displayName: null,
+        password: null,
+        passwordRepeat: null
     };
 
     onChange = event => {
-        const{name, value} = event.target;
+        const { name, value } = event.target;
         this.setState({
-            [name]:value
+            [name]: value
         });
     };
 
-    onClickSingUp = event =>{
+    onClickSingUp = event => {
         event.preventDefault();
 
-        const {username,displayName,password} = this.state;
-        
-        const body ={
+        const { username, displayName, password } = this.state;
+
+        const body = {
             username,
             displayName,
             password
@@ -31,29 +31,40 @@ class UserSingupPage extends React.Component{
     }
 
     render() {
-        return(
-            <form>
-                <h1>Sing Up</h1>
-                <div>
-                    <label>Username</label>
-                    <input name="username" onChange={this.onChange}/>                                   
-                </div>
-                <div>
-                    <label>Display Name</label>
-                    <input name ="displayName" onChange={this.onChange}/>                                   
-                </div>
-                <div>
-                    <label>Password</label>
-                    <input name = "password" type="password" onChange={this.onChange}/>                                   
-                </div>
-                <div>
-                    <label>Password Repeat</label>
-                    <input name = "passwordRepeat" type="password" onChange={this.onChange}/>                                   
-                </div>
-                <button onClick={this.onClickSingUp}>Sing Up</button>
-                  
-            </form>
-          
+        return (
+            <div className="container">
+                <form>
+                    <h1 className="text-center">Sing Up</h1>
+                    <div className="from-group">
+                        <label>Username</label>
+                        <input className="form-control" name="username" onChange={this.onChange} />
+                    </div>
+                    <div className="from-group">
+                        <label>Display Name</label>
+                        <input className="form-control" name="displayName" onChange={this.onChange} />
+                    </div>
+                    <div className="from-group">
+                        <label>Password</label>
+                        <input className="form-control" name="password" type="password" onChange={this.onChange} />
+                    </div>
+                    <div className="from-group">
+                        <label>Password Repeat</label>
+                        <input className="form-control" name="passwordRepeat" type="password" onChange={this.onChange} />
+                    </div>
+                    
+                    <div className="text-center">
+                        <button className="btn btn-primary" onClick={this.onClickSingUp}>
+                            Sing Up
+                        </button>
+                    </div>
+
+
+                </form>
+
+
+            </div>
+
+
         )
     }
 }
