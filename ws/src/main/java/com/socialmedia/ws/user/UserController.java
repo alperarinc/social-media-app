@@ -9,14 +9,12 @@ import com.socialmedia.ws.shared.GenericResponse;
 
 @RestController
 public class UserController {
-
     @Autowired
     UserService userService;
 
     @PostMapping("/api/1.0/users")
     public GenericResponse createUser(@RequestBody User user) {
-    	userService.save(user);
-    	return new GenericResponse();
-    	
+        userService.save(user);
+        return new GenericResponse("user created");
     }
 }
